@@ -160,8 +160,9 @@ export function getCoinDetail(coin: any): Record<TokenVariant, string | number |
 export async function fetchCoinDetail(wallet: WalletConnection, coin: any) {
     let accountId = wallet.getAccountId();
     let tokeninfo = tokens[coin];
+    const connected = wallet.isSignedIn();
     
-    if(coin == coins[6]) {
+    if(coin == coins[6] && connected) {
         let token = await getTokenContract(wallet, coin.toString());
         let contract = await getMasterContract(wallet);
         let balance = await token.ft_balance_of({

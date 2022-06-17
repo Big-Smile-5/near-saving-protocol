@@ -182,8 +182,8 @@ export const NewChartEntire = (props: any) => {
                                 time: {
                                     unit: "minute",
                                     //@ts-ignore
-                                    min: String(data.datasets[0].data[0].x),
-                                    max: String(data.datasets[0].data.pop().x),
+                                    // min: String(data.datasets[0].data[0].x),
+                                    // max: String(data.datasets[0].data.pop().x),
                                 },
                                 bounds: "data",
                                 ticks: {
